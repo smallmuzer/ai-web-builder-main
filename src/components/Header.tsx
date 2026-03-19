@@ -65,15 +65,14 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-card/90 backdrop-blur-xl shadow-lg border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-card/90 backdrop-blur-xl shadow-lg border-b border-border/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="container-wide flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 lg:h-20">
         <a href="#home" className="flex items-center gap-2">
-          <img src={logo} alt="Systems Solutions" className="h-10 w-10" />
+          <img src={logo} alt="Systems Solutions Tech" className="h-10 w-10" />
           <span className={`font-heading font-bold text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             Systems<span className="gradient-text"> Solutions</span>
           </span>
@@ -85,15 +84,14 @@ const Header = () => {
             <button
               key={item.href}
               onClick={() => scrollTo(item.href)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
-                scrolled
-                  ? activeSection === item.href
-                    ? "text-secondary bg-secondary/10"
-                    : "text-foreground hover:text-secondary hover:bg-muted"
-                  : activeSection === item.href
-                    ? "text-secondary bg-secondary/20"
-                    : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
-              }`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${scrolled
+                ? activeSection === item.href
+                  ? "text-secondary bg-secondary/10"
+                  : "text-foreground hover:text-secondary hover:bg-muted"
+                : activeSection === item.href
+                  ? "text-secondary bg-secondary/20"
+                  : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                }`}
             >
               {item.label}
               {activeSection === item.href && (
@@ -109,11 +107,10 @@ const Header = () => {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className={`ml-1 p-2.5 rounded-lg transition-colors ${
-              scrolled
-                ? "text-muted-foreground hover:text-foreground hover:bg-muted"
-                : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10"
-            }`}
+            className={`ml-1 p-2.5 rounded-lg transition-colors ${scrolled
+              ? "text-muted-foreground hover:text-foreground hover:bg-muted"
+              : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10"
+              }`}
             title={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -151,11 +148,10 @@ const Header = () => {
           </a>
           <a
             href="/admin/login"
-            className={`ml-1 p-2.5 rounded-lg transition-colors ${
-              scrolled
-                ? "text-muted-foreground hover:text-foreground hover:bg-muted"
-                : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10"
-            }`}
+            className={`ml-1 p-2.5 rounded-lg transition-colors ${scrolled
+              ? "text-muted-foreground hover:text-foreground hover:bg-muted"
+              : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10"
+              }`}
             title="Admin Panel"
           >
             <Shield size={18} />
@@ -199,11 +195,10 @@ const Header = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollTo(item.href)}
-                  className={`text-left px-4 py-3 rounded-lg font-medium ${
-                    activeSection === item.href
-                      ? "text-secondary bg-secondary/10"
-                      : "text-foreground hover:bg-muted"
-                  }`}
+                  className={`text-left px-4 py-3 rounded-lg font-medium ${activeSection === item.href
+                    ? "text-secondary bg-secondary/10"
+                    : "text-foreground hover:bg-muted"
+                    }`}
                 >
                   {item.label}
                 </button>
